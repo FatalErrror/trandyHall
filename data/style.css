@@ -1,32 +1,41 @@
-.mainbackground{
- background-image: url('mainbackgroundflatdark.jpg');
- background-repeat: no-repeat;
- background-size: cover;
-}
-.ten {
-color: #E7E5DD;
-}
-.ten a {
- color: #E7E5DD;
- display: inline-block;
- text-align: center;
- text-decoration: none;
- border-radius: 6px;
- outline: none;
-}
-.ten a:hover {
- color: #BDB9AB;
+body{
+  margin: 0;
+  background-image: url("https://github.com/FatalErrror/trandyHall/raw/master/data/mainbackgroundflatdark.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
 }
 
-a{
- color: #555;
- text-decoration: none;
- font-size: xx-large;
+.navbar{
+  display: block;
 }
-p{
- height: 50;
+
+.navbar1{
+  margin-left: 100px;
 }
-h2{
- color:#E7E5DD;
- font-size: xxx-large;
+
+.content{
+  margin: auto;
+}
+
+.button{
+  display: block;
+  font-family: 'Poiret One', cursive;
+  text-transform: uppercase;
+  color: white;
+  width: 220px;
+  height: 60px;
+  padding-top: 10px;
+  box-sizing: border-box;
+  font-size: 34px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  padding-left: 5px;
+  margin-top: 20px;
+  outline: none;
+  background-color: rgba(0,0,0,0);
+}
+
+.button:hover {
+  color: #ddd;
 }
