@@ -1,0 +1,8 @@
+C:\Users\gruni\Desktop\node\obj\x86\Debug\Start Server.csprojAssemblyReference.cache
+C:\Users\gruni\Desktop\node\obj\x86\Debug\Start Server.csproj.CoreCompileInputs.cache
+C:\Users\gruni\Desktop\node\Start server\obj\x86\Debug\Start Server.csprojAssemblyReference.cache
+C:\Users\gruni\Desktop\node\Start server\obj\x86\Debug\Start Server.csproj.CoreCompileInputs.cache
+C:\Users\gruni\Desktop\node\Start server\bin\Debug\ConsoleApplication.exe
+C:\Users\gruni\Desktop\node\Start server\bin\Debug\ConsoleApplication.pdb
+C:\Users\gruni\Desktop\node\Start server\obj\x86\Debug\ConsoleApplication.exe
+C:\Users\gruni\Desktop\node\Start server\obj\x86\Debug\ConsoleApplication.pdb

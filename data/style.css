@@ -1,0 +1,32 @@
+.mainbackground{
+ background-image: url('mainbackgroundflatdark.jpg');
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+.ten {
+color: #E7E5DD;
+}
+.ten a {
+ color: #E7E5DD;
+ display: inline-block;
+ text-align: center;
+ text-decoration: none;
+ border-radius: 6px;
+ outline: none;
+}
+.ten a:hover {
+ color: #BDB9AB;
+}
+
+a{
+ color: #555;
+ text-decoration: none;
+ font-size: xx-large;
+}
+p{
+ height: 50;
+}
+h2{
+ color:#E7E5DD;
+ font-size: xxx-large;
+}

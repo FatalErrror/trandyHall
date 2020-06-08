@@ -1,0 +1,11 @@
+{
+  "name": "myserver",
+  "version": "1.0.0",
+  "description": "сервер для магазина",
+  "main": "app.js",
+  "scripts": {
+    "test": "start"
+  },
+  "author": "Machigai",
+  "license": "ISC"
+}

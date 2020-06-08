@@ -1,0 +1,5 @@
+home.html
+contacts.html
+man.html
+woman.html
+news.html

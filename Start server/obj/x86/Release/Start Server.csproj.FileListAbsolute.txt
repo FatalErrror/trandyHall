@@ -1,0 +1,5 @@
+C:\Users\gruni\Desktop\node\Start server\bin\Release\ConsoleApplication.exe
+C:\Users\gruni\Desktop\node\Start server\bin\Release\ConsoleApplication.pdb
+C:\Users\gruni\Desktop\node\Start server\obj\x86\Release\Start Server.csproj.CoreCompileInputs.cache
+C:\Users\gruni\Desktop\node\Start server\obj\x86\Release\ConsoleApplication.exe
+C:\Users\gruni\Desktop\node\Start server\obj\x86\Release\ConsoleApplication.pdb
