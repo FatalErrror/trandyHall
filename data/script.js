@@ -8,7 +8,7 @@ let links =[
 ]
 
 var button = document.getElementsByTagName('button');
-let content = document.querySelector('.content');
+let content = document.querySelector('.contentimage');
 console.log(button);
 // при клике по кнопке скрипт начинает выбирать
 

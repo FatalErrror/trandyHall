@@ -4,6 +4,7 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  height: 100vh;
 }
 
 .navbar{
@@ -15,6 +16,13 @@ body{
 }
 
 .content{
+  margin: auto;
+  height: 90vh;
+  
+}
+
+.contentimage{
+  height:100%;
   margin: auto;
 }
 
