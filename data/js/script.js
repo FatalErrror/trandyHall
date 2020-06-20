@@ -1,10 +1,10 @@
 //home;man;woman;news;contacts
 let links =[
-  "/home1.html",
-  "/man.html",
-  "/woman.html",
-  "/news.html",
-  "/contacts.html"
+  "/home",
+  "/man",
+  "/woman",
+  "/news",
+  "/contacts"
 ]
 
 let button = document.querySelectorAll('.button');
@@ -28,12 +28,13 @@ function req(urlindex) {
 }
 
 //content.appendChild(div);
-// при клике по кнопке скрипт начинает выбирать
-
 for(let i = 0; i < button.length; i = i + 1){
   button[i].onclick = function() {
 	//content.innerHTML = "<img class='contentimage' alt='loading' src='/img/loading.gif'>";
 	console.log(i);
     //req(i);
   };
+  if (document.location == button[i].href){
+	  button[i].style.cssText = 'color: red;';
+  }
 }
