@@ -1,0 +1,14 @@
+0|sdg|мужская одежда|gender=man|200|10|https://static-eu.insales.ru/images/products/1/4312/246730968/5804-a9240e8c8a-e0da7a957787fb232eb373b1a1600dea.jpg
+1|sdrtfgjhs|мужская одежда|gender=man|200|10|https://avatars.mds.yandex.net/get-pdb/236760/03201114-e0af-493e-bb16-5f001d6dbb2e/s600
+2|yioltgjk|мужская одежда|gender=man|200|10|https://yandex.ru/images/_crpd/Eu16c6N18/e31a06ANqsJ/10_g1GtnviM_hu3dN2K1a5yGqcajJp8ROQKvyYpA87ejuXXxcu4I5tcvHiCBodTr5rj2mAeXjsExPgO9lqD4G8WPIEYqtysmvlb9DvT3MSveEr7TtndJU_jDq0nLRuQy7XYuba93l7-LMIe_hmFX_-Zr5Y_CDZQ
+3|aergf|мужская одежда|gender=man|200|10|https://static-eu.insales.ru/images/products/1/210/67510482/5418.jpg
+4|jkh|мужская одежда|gender=man|400|10|https://avatars.mds.yandex.net/get-pdb/1632284/10fc164c-e19b-4f07-8a39-1ffbba6023ef/s1200?webp=false
+5|tjkth|мужская одежда|gender=man|200|10|https://avatars.mds.yandex.net/get-pdb/1376702/76934c01-d461-4b75-9952-e2631b7113cf/s600
+6|mltymd|мужская одежда|gender=man|200|10|https://avatars.mds.yandex.net/get-pdb/477388/53e32380-b94a-4e63-b740-dbf3c429b293/s600?webp=false
+7|fghjnfj|мужская одежда|gender=man|200|10|https://mtdata.ru/u10/photo4663/20642730718-0/original.jpg
+8|jurwrhg|мужская одежда|gender=man|200|10|https://ratatum.com/wp-content/uploads/2018/01/10-a1.jpg
+9|jktmruku|мужская одежда|gender=man|200|10|http://gmm-shop.ru/upload/medialibrary/b31/b31e0a0e95cd5c5c327a7db90e16409b.jpg
+10|uktm|женская одежда|gender=woman|300|5|https://a.lmcdn.ru/pi/img600x866/D/O/DO005EWFPUR3_8961032_1_v1_2x.jpg
+11|trmbimd|женская одежда|gender=woman|300|5|https://cdn.st100sp.com/cache_pictures/177611483/thumb300
+12|trmfvoldn|женская одежда|gender=woman|300|5|https://selcdn.fedsp.com/pe/31/835083/3935b60a7da5157b.jpeg
+13|klthj|женская одежда|gender=woman|300|5|https://afrodita.zp.ua/image/cache/c4904d6c01cdd742a59db65bc35388c2.jpg

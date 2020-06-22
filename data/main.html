@@ -10,21 +10,26 @@
   </head>
   <body>
     <div class="navbar">
-      <img class="logo" src="img/TH.png">
+	  <div class="logo">
+      <img src="img/TH.png">
+	  </div>
       <div class="navbar1">
         <a class="button" href='/home'>Главная</a>
-        <a class="button" href='/man'>Для мальчиков</a>
-        <a class="button" href='/woman'>Для девочек</a>
+        <a class="button" href='/list?gender=man'>Для мальчиков</a>
+        <a class="button" href='/list?gender=woman'>Для девочек</a>
         <a class="button" href='/news'>Новости</a>
         <a class="button" href='/contacts'>Список магазинов</a>
       </div>
-	  <div style='margin-top: 80px;'>
+	  <div style='position: absolute; bottom: 10px;'>
 		<a target="_blank" rel="noopener noreferrer" class='sicons' href='https://sun9-61.userapi.com/c637823/v637823752/6cd6/dH6tdvHISGE.jpg'><img src='https://sun9-61.userapi.com/c637823/v637823752/6cd6/dH6tdvHISGE.jpg'></a>
 		<a target="_blank" rel="noopener noreferrer" class='sicons' href='https://sun3-13.userapi.com/r7QR5flhV4GmjfG3XYY1XRjoGfPUrG3TkAzGfA/hCoLfjwGBAo.jpg'><img src='https://sun3-13.userapi.com/r7QR5flhV4GmjfG3XYY1XRjoGfPUrG3TkAzGfA/hCoLfjwGBAo.jpg'></a>
 		<a target="_blank" rel="noopener noreferrer" class='sicons' href='https://sun9-7.userapi.com/c624428/v624428764/2383f/njhGJl9NA0s.jpg'><img src='https://sun9-7.userapi.com/c624428/v624428764/2383f/njhGJl9NA0s.jpg'></a>
 	  </div>
     </div>
     <div class="content">
+	  <a href='/account'><img class='lkb' style='right: 100px;' src='https://static.thenounproject.com/png/126329-200.png'></a>
+	  <a href='/basket'><img class='lkb' src='https://static.thenounproject.com/png/237699-200.png'></a>
+	  
 	  {content}
     </div>
 	<script src="https://code.s3.yandex.net/web-code/smoothly.js"></script>

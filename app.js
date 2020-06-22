@@ -28,25 +28,59 @@ Object.keys(ifaces).forEach(function (ifname) {
 
 var port = 5555;
 
+let database;
 
+function getdatabase() {
+  fs.readFile(path.join(__dirname,'data/data/database.txt'), (err, data) => {
+    if (err) {
+      console.log(err);
+    }
+    else {
+      database = data.toString().split('\n');
+    }
+  });
+}
 
+getdatabase();
 
 http.createServer((request,response) => {
   try{
+    //=====проверка надоли обновлять базу данных========
+    fs.readFile(path.join(__dirname,'data/data/needupdatedatabase.txt'), (err, data) => {
+      if (err) {
+        console.log(err);
+      }
+      else {
+        if (data.toString() == '1') {
+          fs.writeFile(path.join(__dirname,'data/data/needupdatedatabase.txt'), '0', (err1) => {console.log(err1)});
+          getdatabase();
+        }
+      }
+    });
+
+    //============описание необходимых функций================
+
+    function rewritefile(filepath, errcallback, data) {
+      fs.writeFile(path.join(__dirname+'/data',filepath), data, errcallback);
+    }
+
     function requestfile(filepath, errcallback, succescallback) {
       fs.readFile(path.join(__dirname+'/data',filepath), (err, data) => {
         if (err) {
           errcallback(err);
         }
         else {
-		
           succescallback(data);
         }
       });
     }
 
+    function getinformationwithid(id) {
+      return database[id].split('|');
+    }
+
     function err404(err) {
-	  console.log(err);
+      console.log(err);
       response.statusCode = 404;
       response.setHeader('Content-Type', 'text/html');
       response.end(
@@ -64,73 +98,113 @@ http.createServer((request,response) => {
       });
     }
 
-    function home(){
-      requestfile('home.html', err404, pasteinmain);
-    }
-
-    function item(par) {
-      requestfile('/item.html', err404, (data) => {
-        let page = data.toString().replace("{image}", par);
-        pasteinmain(page);
-      });
-    }
-
-  console.log('Url: ' + request.url);// /jlhfvov/hgckg.img?jhgj=2&kfnjkn=kjfgnb
-  let defaultquery = true;
-  let querys = request.url.split('?')// [/jlhfvov/hgckg.img , jhgj=2&kfnjkn=kjfgnb]
-  if (querys.length > 1){
-
-    let squerys = querys[1].split('&');// [jhgj=2 , kfnjkn=kjfgnb]
-    console.log('');
-    console.log('Параметры:');
-    console.log(squerys);
-    console.log('');
-    for (let i = 0;i < squerys.length;i++){
-      let query = squerys[i].split('=');
-      console.log(query);
-      if (query[0] == 'itemimg'){
-        defaultquery = false;
-        item(query[1]);
-        break;
+    function getparamvalue(key) {
+      if (querys.length > 1){//если есть параметры
+        let params = querys[1].split('&');// [jhgj=2 , kfnjkn=kjfgnb]
+        for (let i = 0;i < params.length;i++){
+          let param = params[i].split('=');
+          if (param[0] == key) return param[1];
+        }
+        return undefined;
       }
+      else return undefined;
     }
-    console.log('');
-    console.log('');
 
-  }
+    //========================разделение запроса=================
+	console.log('=====================================');
+    console.log('Url: ' + request.url);// /jlhfvov/hgckg.img?jhgj=2&kfnjkn=kjfgnb
+    let querys = request.url.split('?')// [/jlhfvov/hgckg.img , jhgj=2&kfnjkn=kjfgnb]
+    let url = querys[0];// /jlhfvov/hgckg.img
+    let surl = url.split('/');// [ , jlhfvov , hgckg.img]
+    let ssurl = surl[surl.length-1].split('.');// [hgckg , img]
+    let fyletype = 'html';
 
-  let url = querys[0];// /jlhfvov/hgckg.img
-  let surl = url.split('/');// [ , jlhfvov , hgckg.img]
-  let ssurl = surl[surl.length-1].split('.');// [hgckg , img]
-  let fyletype = 'html';
+    console.log('url: ' + url);// /jlhfvov/hgckg.img
+    console.log('surl: ' + surl);// [ , jlhfvov , hgckg.img]
+    console.log('ssurl: ' + ssurl);// [hgckg , img]
 
-  console.log(url);// /jlhfvov/hgckg.img
-  console.log(surl);// [ , jlhfvov , hgckg.img]
-  console.log(ssurl);// [hgckg , img]
+    //==============варианты запросов=========
+    function home(){
+     requestfile('home.html', err404, pasteinmain);
+    }
 
-  
-  if (defaultquery){
+    function list() {
+     let values; //values - массив id
+     //TODO: сделать быборку по тегам
+      //============ выборка по тегам=====
+       if (getparamvalue('gender') == 'man'){
+         values = [0,1,2,3,4,5,6,7,8,9];
+       }
+       else if (getparamvalue('gender') == 'woman'){
+         values = [10,11,12,13];
+       }
+       else {
+         values = [0,1,2,3,4,5,6,7,8,9,10,11,12,13];
+       }
+      //==================================
+     requestfile('/list.html', err404, (data) => {
+       let listpage = data.toString();
+       requestfile('/card.html', err404, (data1) => {
+         let listcontent = '';
+         let cardpage = data1.toString();
+         for (let i = 0;i < values.length;i++){
+           let information = getinformationwithid(values[i]);
+           let card = cardpage.replace('{id}',information[0]);
+           card = card.replace('{src}',information[6]);
+           card = card.replace('{name}',information[1]);
+           card = card.replace('{description}',information[2]);
+           card = card.replace('{value}',information[4]);
+           listcontent = listcontent+'\n'+card;
+         }
+         pasteinmain(listpage.replace("{listcontent}",listcontent));
+       });
+     });
+    }
+
+    function item() {
+     requestfile('/item.html', err404, (data) => {
+       let id = getparamvalue('itemid');
+       if (id == undefined) id = 0;
+       let page = data.toString().replace("{image}", getinformationwithid(id)[6]);
+        pasteinmain(page);
+       });
+    }
+
+    function defaultrequest() {
+        if (url == '/') {
+          home();
+        } else {
+          requestfile(url + '.html', err404, pasteinmain);
+        }
+    }
+
+    
+    
+    //==================обработка запроса==========
+    /*
+    case '':  break;
+
+    case '':{
+
+      break;
+    }
+    */
     if (ssurl.length > 1) {
       fyletype = ssurl[1];
-      requestfile(url, err404,(data) => {
-          response.statusCode = 200;
-          //switch (request.url)
-          response.setHeader('Content-Type', 'text/'+fyletype);
-          response.end(data);
-        });
-    }
-    else
-    {
-      if (url == '/'){
-        home();
-      }
-      else{
-        requestfile(url+'.html', err404, pasteinmain);
+      requestfile(url, err404, (data) => {
+        response.statusCode = 200;
+        response.setHeader('Content-Type', 'text/' + fyletype);
+        response.end(data);
+      });
+    } else {
+      switch (ssurl[0]) {
+        case 'home': home(); break;
+        case 'item': item(); break;
+        case 'list': list(); break;
+        default: defaultrequest();
       }
     }
-    console.log(fyletype);
-  }
-}catch (e) {
+  }catch (e) {
     console.log(e);
   }
 }).listen(port,() => {console.log('Сервер начал прослушивание запросов на порту '+port);});

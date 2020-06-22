@@ -15,11 +15,15 @@ let timeoutId;
 document.addEventListener('DOMContentLoaded', () => {
 	dots = document.querySelectorAll('.dot');
     homeimg = document.querySelector('.home');
+	/*lk = document.querySelectorAll('.lkb');
+	lk[0].className = 'homeimg';
+	lk[0].style.cssText = 'right: 100px;';
+	lk[1].className = 'homeimg';
 	for (let i =0; i < dots.length;i++) {
 		dots[i].onclick = () => {
 			change1(doti, i);
 		}
-	}
+	}*/
 	dots[0].style.backgroundColor = '#ceb505';
 	homeimg.style.cssText = 'background-image: url('+dotimgs[0]+');';
     timeoutId = setTimeout(change, 3000);
