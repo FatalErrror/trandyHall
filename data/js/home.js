@@ -18,14 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	/*lk = document.querySelectorAll('.lkb');
 	lk[0].className = 'homeimg';
 	lk[0].style.cssText = 'right: 100px;';
-	lk[1].className = 'homeimg';
+	lk[1].className = 'homeimg';*/
 	for (let i =0; i < dots.length;i++) {
 		dots[i].onclick = () => {
 			change1(doti, i);
 		}
-	}*/
+	}
 	dots[0].style.backgroundColor = '#ceb505';
+	
 	homeimg.style.cssText = 'background-image: url('+dotimgs[0]+');';
+	
     timeoutId = setTimeout(change, 3000);
 });
 
@@ -39,6 +41,8 @@ function change1(predoti, newdoti){
 	doti = newdoti;
 	if (doti >= dots.length) doti = 0;
 	dots[doti].style.backgroundColor = '#ceb505';
-	homeimg.style.cssText = 'background-image: url('+dotimgs[doti]+');';
+	smoothly(homeimg, 'style.cssText', 'background-image: url('+dotimgs[doti]+');');
+	/*homeimg.style.cssText = 'background-image: url('+dotimgs[doti]+');';*/
+	
 	timeoutId = setTimeout(change, 3000);
 }

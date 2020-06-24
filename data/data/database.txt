@@ -12,3 +12,4 @@
 11|trmbimd|женская одежда|gender=woman|300|5|https://cdn.st100sp.com/cache_pictures/177611483/thumb300
 12|trmfvoldn|женская одежда|gender=woman|300|5|https://selcdn.fedsp.com/pe/31/835083/3935b60a7da5157b.jpeg
 13|klthj|женская одежда|gender=woman|300|5|https://afrodita.zp.ua/image/cache/c4904d6c01cdd742a59db65bc35388c2.jpg
+14|iklrdgn|мужская одежда|gender=man|500|8|https://www.rubaiplius.lt/wp-content/uploads/2019/07/13336_1-300x400.jpg

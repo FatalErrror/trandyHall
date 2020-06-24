@@ -97,6 +97,19 @@ http.createServer((request,response) => {
         response.end(data.toString().replace("{content}", data1));
       });
     }
+	
+	function getdatabaseparamvalue(id, key) {
+	  let line = getinformationwithid(id)[3];
+      if (line.length > 2){//если есть параметры
+        let params = line.split('&');// [jhgj=2 , kfnjkn=kjfgnb]
+        for (let i = 0;i < params.length;i++){
+          let param = params[i].split('=');
+          if (param[0] == key) return param[1];
+        }
+        return undefined;
+      }
+      else return undefined;
+    }
 
     function getparamvalue(key) {
       if (querys.length > 1){//если есть параметры
@@ -112,7 +125,7 @@ http.createServer((request,response) => {
 
     //========================разделение запроса=================
 	console.log('=====================================');
-    console.log('Url: ' + request.url);// /jlhfvov/hgckg.img?jhgj=2&kfnjkn=kjfgnb
+    console.log('request: ' + request.url);// /jlhfvov/hgckg.img?jhgj=2&kfnjkn=kjfgnb
     let querys = request.url.split('?')// [/jlhfvov/hgckg.img , jhgj=2&kfnjkn=kjfgnb]
     let url = querys[0];// /jlhfvov/hgckg.img
     let surl = url.split('/');// [ , jlhfvov , hgckg.img]
@@ -129,25 +142,21 @@ http.createServer((request,response) => {
     }
 
     function list() {
-     let values; //values - массив id
+     let values = [0]; //values - массив id
      //TODO: сделать быборку по тегам
       //============ выборка по тегам=====
-       if (getparamvalue('gender') == 'man'){
-         values = [0,1,2,3,4,5,6,7,8,9];
-       }
-       else if (getparamvalue('gender') == 'woman'){
-         values = [10,11,12,13];
-       }
-       else {
-         values = [0,1,2,3,4,5,6,7,8,9,10,11,12,13];
-       }
+	  param = getparamvalue('gender');
+	  for (let i = 0;i < database.length;i++){
+		 if (getdatabaseparamvalue(i, 'gender') == param) values[values.length] = i;
+	  }
+	  
       //==================================
      requestfile('/list.html', err404, (data) => {
        let listpage = data.toString();
        requestfile('/card.html', err404, (data1) => {
          let listcontent = '';
          let cardpage = data1.toString();
-         for (let i = 0;i < values.length;i++){
+         for (let i = 1;i < values.length;i++){
            let information = getinformationwithid(values[i]);
            let card = cardpage.replace('{id}',information[0]);
            card = card.replace('{src}',information[6]);
