@@ -138,7 +138,10 @@ body{
 
 
 .newsalebutton{
-	
+	width:500px;
+	height:200px;
+	background-color: #101010;
+	margin: auto;
 }
 
 
@@ -157,13 +160,13 @@ body{
 	display: inline-block;
 	margin-left: 20px;
 	margin-bottom: 20px;
-	width: 300px;
+	width: 280px;
 	text-align: center;
 }
 
 .card img{
-	width: 300px;
-	height:400px;
+	width: 280px;
+	height:373px;
 }
 
 .card h1{

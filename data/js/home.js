@@ -41,8 +41,8 @@ function change1(predoti, newdoti){
 	doti = newdoti;
 	if (doti >= dots.length) doti = 0;
 	dots[doti].style.backgroundColor = '#ceb505';
-	smoothly(homeimg, 'style.cssText', 'background-image: url('+dotimgs[doti]+');');
-	/*homeimg.style.cssText = 'background-image: url('+dotimgs[doti]+');';*/
+	/*smoothly(homeimg, 'style.cssText', 'background-image: url('+dotimgs[doti]+');');*/
+	homeimg.style.cssText = 'background-image: url('+dotimgs[doti]+');';
 	
 	timeoutId = setTimeout(change, 3000);
 }
