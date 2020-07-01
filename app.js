@@ -146,8 +146,13 @@ http.createServer((request,response) => {
      //TODO: сделать быборку по тегам
       //============ выборка по тегам=====
 	  param = getparamvalue('gender');
+	  param1 = getparamvalue('neworsale');
 	  for (let i = 0;i < database.length;i++){
-		 if (getdatabaseparamvalue(i, 'gender') == param) values[values.length] = i;
+		 if (getdatabaseparamvalue(i, 'gender') == param) {
+			 if (getdatabaseparamvalue(i, 'neworsale') == param1) {
+			   values[values.length] = i;
+			 }
+		 }
 	  }
 	  
       //==================================

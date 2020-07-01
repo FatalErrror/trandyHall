@@ -1,5 +1,5 @@
 let dotimgs = [
-  'http://static2.fashionbeans.com/wp-content/uploads/2016/02/mangomancampsummer2.jpg',
+  'https://yandex.ru/images/_crpd/x1Dtq6285/c21501VOjOM_/stAxSmRuEy-ticdEJtv7vYeLyL6UvF6Rfw-ETEqaoGfVfugKrpKQ9cSvbCLsShqu_fpIDwIGkH21SnfV2x2CK7IAEJpAW3I6nJizkePaq60ijg37wMnOIQ9OpFwLH0E0ZqgPDbhV5rIjyQ7TSc9q-ylbjfsxoB',
   'https://avatars.mds.yandex.net/get-pdb/879261/ef0e88ec-8da4-4f5b-87fe-841cbad8c25e/s1200?webp=false',
   'https://avatars.mds.yandex.net/get-pdb/219263/b9c56bbe-07d4-471e-af27-d95f5c893094/s1200?webp=false',
   'https://porusski.me/wp-content/uploads/2016/10/Le-21eme-Adam-Katz-Sinding-London-Collection-Mens-Fashion-Week-Fall-Winter-2016-2017_AKS4128.jpg',
@@ -41,7 +41,7 @@ function change1(predoti, newdoti){
 	doti = newdoti;
 	if (doti >= dots.length) doti = 0;
 	dots[doti].style.backgroundColor = '#ceb505';
-	/*smoothly(homeimg, 'style.cssText', 'background-image: url('+dotimgs[doti]+');');*/
+	/*smoothly(homeimg, 'style', '.cssText = background-image: url('+dotimgs[doti]+');');*/
 	homeimg.style.cssText = 'background-image: url('+dotimgs[doti]+');';
 	
 	timeoutId = setTimeout(change, 3000);

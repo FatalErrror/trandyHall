@@ -137,12 +137,39 @@ body{
 
 
 
-.newsalebutton{
-	width:500px;
-	height:200px;
-	background-color: #101010;
-	margin: auto;
+
+.newsalecontent{
+	height:auto;
+	width:inherit;
+	margin: 30px;
+	margin-top:90px;
+	display: grid;
 }
+
+.newsalebutton{
+	width:auto;
+	height:auto;
+	background-color: #101010;
+	margin: 10px;
+	display: block;
+	background-repeat: no-repeat;
+    background-size: cover;
+	border:2px solid #808080;
+	border-radius:5px;
+	text-decoration: none;
+	
+}
+
+.newsalebutton h1{
+	text-align: center;
+    font-size: 16em;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #d49797;
+    /* height: 100%; */
+    margin: auto;
+}
+
 
 
 
