@@ -179,7 +179,13 @@ http.createServer((request,response) => {
      requestfile('/item.html', err404, (data) => {
        let id = getparamvalue('itemid');
        if (id == undefined) id = 0;
-       let page = data.toString().replace("{image}", getinformationwithid(id)[6]);
+	   let information = getinformationwithid(id);
+       let page = data.toString().replace("{image}", information[6]);
+	   page = page.replace("{name}", information[1]);
+	   page = page.replace("{value}", information[4]);
+	   page = page.replace("{description}", information[2]);
+	   
+	   
         pasteinmain(page);
        });
     }
