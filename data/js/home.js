@@ -1,5 +1,5 @@
 let dotimgs = [
-  'https://yandex.ru/images/_crpd/x1Dtq6285/c21501VOjOM_/stAxSmRuEy-ticdEJtv7vYeLyL6UvF6Rfw-ETEqaoGfVfugKrpKQ9cSvbCLsShqu_fpIDwIGkH21SnfV2x2CK7IAEJpAW3I6nJizkePaq60ijg37wMnOIQ9OpFwLH0E0ZqgPDbhV5rIjyQ7TSc9q-ylbjfsxoB',
+  'img/img1.jfif',
   'https://avatars.mds.yandex.net/get-pdb/879261/ef0e88ec-8da4-4f5b-87fe-841cbad8c25e/s1200?webp=false',
   'https://avatars.mds.yandex.net/get-pdb/219263/b9c56bbe-07d4-471e-af27-d95f5c893094/s1200?webp=false',
   'https://porusski.me/wp-content/uploads/2016/10/Le-21eme-Adam-Katz-Sinding-London-Collection-Mens-Fashion-Week-Fall-Winter-2016-2017_AKS4128.jpg',

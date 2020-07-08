@@ -13,7 +13,16 @@ card:
 -{description}
 -{value}
 list: {listcontent}
-item: {image}
+item: 
+-{image}
+-{name}
+-{description}
+-{value}
+-{brand contry}
+-{type}
+-{consist}
+-{size}
+-{color}
 ================================================================================
 html param
 
